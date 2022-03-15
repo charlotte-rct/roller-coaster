@@ -56,3 +56,14 @@ test('5 - Hight earnings during the day should return 4999975000', () => {
   // Then
   expect(result).toBe(4999975000);
 });
+
+test('6 - Works with a large dataset should return 89744892565569', () => {
+  // Given
+  const data = getValuesFromFile('./samples/6_works_with_a_large_dataset.txt');
+
+  // When
+  const result = calculateTotalEarnings(data);
+
+  // Then
+  expect(result).toBe(89744892565569);
+});
