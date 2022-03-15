@@ -23,7 +23,7 @@ test('2 - 1000 groups of few people should return 3935', () => {
   expect(result).toBe(3935);
 });
 
-test('2 -The same group go on the ride several during the day should return 15', () => {
+test('3 -The same group go on the ride several during the day should return 15', () => {
   // Given
   const data = getValuesFromFile('./samples/3_the_same_groups_go_on_the_ride_several_times_during_the_day.txt');
 
@@ -33,3 +33,4 @@ test('2 -The same group go on the ride several during the day should return 15',
   // Then
   expect(result).toBe(15);
 });
+
