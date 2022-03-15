@@ -46,3 +46,13 @@ test('4 - All the people get on the roller coaster al least once should return 1
   expect(result).toBe(15000);
 });
 
+test('5 - Hight earnings during the day should return 4999975000', () => {
+  // Given
+  const data = getValuesFromFile('./samples/5_high_earnings_during_the_day.txt');
+
+  // When
+  const result = calculateTotalEarnings(data);
+
+  // Then
+  expect(result).toBe(4999975000);
+});
