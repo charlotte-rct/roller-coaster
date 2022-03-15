@@ -34,3 +34,15 @@ test('3 -The same group go on the ride several during the day should return 15',
   expect(result).toBe(15);
 });
 
+
+test('4 - All the people get on the roller coaster al least once should return 15000', () => {
+  // Given
+  const data = getValuesFromFile('./samples/4_all_the_people_get_on_the_roller_coaster_at_least_once.txt');
+
+  // When
+  const result = calculateTotalEarnings(data);
+
+  // Then
+  expect(result).toBe(15000);
+});
+
