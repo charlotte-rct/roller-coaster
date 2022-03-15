@@ -67,3 +67,14 @@ test('6 - Works with a large dataset should return 89744892565569', () => {
   // Then
   expect(result).toBe(89744892565569);
 });
+
+test('7 - Hard should return 8974489271113753', () => {
+  // Given
+  const data = getValuesFromFile('./samples/7_hard.txt');
+
+  // When
+  const result = calculateTotalEarnings(data);
+
+  // Then
+  expect(result).toBe(8974489271113753);
+});
