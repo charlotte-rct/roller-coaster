@@ -18,11 +18,13 @@ export const getValuesFromFile = (filename: string): InputData => {
       nbPlaces: +fistLineSplitted[0],
       nbRidesPerDay: +fistLineSplitted[1],
       nbGroups: +fistLineSplitted[2],
-      nbPersonsByGroup: new Array(+fistLineSplitted[2]),
+      nbPersonsByGroup: [],
     };
     // Build the groups
     for (let i = 1; i < splittedData.length; i++) {
-      inputData.nbPersonsByGroup.push(+splittedData[i]);
+      if(splittedData[i]) {
+        inputData.nbPersonsByGroup.push(+splittedData[i]);
+      }
     }
     return inputData;
   } catch (e) {

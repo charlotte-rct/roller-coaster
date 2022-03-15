@@ -6,6 +6,19 @@ export interface InputData {
 }
 
 export const calculateTotalEarnings = (inputData: InputData): number => {
-  const result = 0;
-  return result;
+  let nbRidesDone = 0;
+  let totalEarning = 0;
+  while(nbRidesDone < inputData.nbRidesPerDay) {
+    let nbPersonsInRide = 0;
+    let groupIdx = 0;
+    while(nbPersonsInRide + inputData.nbPersonsByGroup[groupIdx] <= inputData.nbPlaces && groupIdx < inputData.nbGroups) {
+      nbPersonsInRide += inputData.nbPersonsByGroup[groupIdx];
+      groupIdx++;
+    }
+    totalEarning += nbPersonsInRide;
+    const removedElts = inputData.nbPersonsByGroup.splice(0, groupIdx);
+    inputData.nbPersonsByGroup.push(...removedElts);
+    nbRidesDone++;
+  }
+  return totalEarning;
 };
