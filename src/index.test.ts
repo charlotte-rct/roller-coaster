@@ -78,3 +78,14 @@ test('7 - Hard should return 8974489271113753', () => {
   // Then
   expect(result).toBe(8974489271113753);
 });
+
+test('8 - Harder should return 89744892714152289', () => {
+  // Given
+  const data = getValuesFromFile('./samples/8_harder.txt');
+
+  // When
+  const result = calculateTotalEarnings(data);
+
+  // Then
+  expect(result).toBe(89744892714152289);
+});
